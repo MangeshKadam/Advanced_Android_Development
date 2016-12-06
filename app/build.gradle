@@ -14,8 +14,6 @@ android {
         multiDexEnabled true
     }
 
-
-
     buildTypes {
         release {
             minifyEnabled false
@@ -47,5 +45,5 @@ dependencies {
     // compile 'com.android.support:support-v4:25.0.1'
     //compile 'com.android.support:support-annotations:25.0.1'
     compile 'com.android.support:multidex:1.0.1'
-    /
+
 }
