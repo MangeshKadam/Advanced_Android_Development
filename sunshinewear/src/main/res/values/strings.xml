@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Sunshine wear</string>
+    <string name="message">Watch face tapped</string>
+    <string name="watchface_name">Sunshine Wear Watchface</string>
+</resources>
