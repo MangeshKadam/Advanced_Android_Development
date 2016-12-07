@@ -25,7 +25,7 @@ dependencies {
     compile('com.google.android.support:wearable:2.0.0-alpha3') {
         exclude module: 'support-v4'
     }
-    compile ('com.google.android.gms:play-services-wearable:9.4.0') {
+    compile('com.google.android.gms:play-services-wearable:9.4.0') {
         exclude module: 'support-v4'
     }
     compile 'com.android.support:palette-v7:25.0.1'

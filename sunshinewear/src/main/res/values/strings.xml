@@ -2,4 +2,5 @@
     <string name="app_name">Sunshine wear</string>
     <string name="message">Watch face tapped</string>
     <string name="watchface_name">Sunshine Wear Watchface</string>
+    <string name="my_digital_name">My Digital</string>
 </resources>
