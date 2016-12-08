@@ -4,4 +4,6 @@
 
     <color name="time_text_color">#ffffff</color>
     <color name="date_text_color">#C6E9FB</color>
+    <color name="line_color">#B3E5FC</color>
+    <color name="line_color_ambient">#ffffff</color>
 </resources>
