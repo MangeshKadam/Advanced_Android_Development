@@ -138,9 +138,15 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
 
         final int tempDiffOffset = 5;
 
-        final int weatherIconXOffset = 5;
+        final int weatherIconXOffset = 25;
 
-        final int weatherIconYOffset = 47;
+        /*final int weatherIconYOffsetRound = 47;
+
+        final int weatherIconYOffsetSquare = 40;*/
+
+        int weahtherIconYOffset  = 0;
+
+        final int lowTempYOffset = 10;
 
         Bitmap mWeatherIcon;
 
@@ -277,6 +283,9 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
 
             float dateTextSize = resources.getDimension(isRound
                     ? R.dimen.digital_date_text_size_round : R.dimen.digital_date_text_size);
+
+            weahtherIconYOffset = isRound?45:40;
+
             mTextPaint.setTextSize(textSize);
             mDatePaint.setTextSize(dateTextSize);
 
@@ -385,6 +394,7 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
 
 
             float xOffsetHighTemp = 0;
+            float halfLowTempTextWidth = 0;
             if(highTemperature!=null) {
                 //draw high temperature
                 float highTempTextWidth = mhighTemperatureTextPaint.measureText(highTemperature);
@@ -396,14 +406,14 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
             if(lowTemperature!=null) {
                 //draw low temperature
                 float lowTempTextWidth = mlowTemperatureTextPaint.measureText(lowTemperature);
-                float halfLowTempTextWidth = lowTempTextWidth / 2;
+                halfLowTempTextWidth = lowTempTextWidth / 2;
                 float xOffsetLowTemp = bounds.centerX() - halfLowTempTextWidth;
-                canvas.drawText(lowTemperature, bounds.centerX() + lowTempTextWidth, bounds.centerY() + tempYOffset, mlowTemperatureTextPaint);
+                canvas.drawText(lowTemperature, bounds.centerX() + halfLowTempTextWidth+ lowTempYOffset, bounds.centerY() + tempYOffset, mlowTemperatureTextPaint);
             }
 
             if(mWeatherIcon!=null) {
                 if (!mAmbient) {
-                    canvas.drawBitmap(mWeatherIcon, bounds.centerX() - xOffsetHighTemp + weatherIconXOffset, bounds.centerY() + weatherIconYOffset, null);
+                    canvas.drawBitmap(mWeatherIcon, xOffsetHighTemp - halfLowTempTextWidth - lowTempYOffset - weatherIconXOffset, bounds.centerY() + weahtherIconYOffset, null);
                 }
             }
 
